@@ -30,38 +30,16 @@ services:
             - elastic
         entrypoint: /bin/true
 
-    douban:
+    yelp:
         image: house-renting/crawler
-        container_name: douban
+        container_name: yelp
         networks:
             - localhost
         volumes:
             - ./data/images:/house-renting/data/images
         depends_on:
             - crawler
-        entrypoint: scrapy crawl douban
-
-    "58":
-        image: house-renting/crawler
-        container_name: "58"
-        networks:
-            - localhost
-        volumes:
-            - ./data/images:/house-renting/data/images
-        depends_on:
-            - crawler
-        entrypoint: scrapy crawl 58
-
-    lianjia:
-        image: house-renting/crawler
-        container_name: lianjia
-        networks:
-            - localhost
-        volumes:
-            - ./data/images:/house-renting/data/images
-        depends_on:
-            - crawler
-        entrypoint: scrapy crawl lianjia
+        entrypoint: scrapy crawl yelp
 
     elastic:
         image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.2.4

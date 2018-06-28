@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from house_renting.spider_settings import lianjia, a58
-
 BOT_NAME = 'house_renting'
 
 COMMANDS_MODULE = 'house_renting.commands'
@@ -109,20 +107,10 @@ AUTOTHROTTLE_DEBUG = True
 DOWNLOAD_TIMEOUT = 30
 RETRY_TIMES = 3
 
-LOG_LEVEL = 'INFO'
+# LOG_LEVEL = 'INFO'
+LOG_LEVEL = 'DEBUG'
 
-SPIDER_SETTINGS = {
-    'lianjia': {
-        'cities': lianjia.cities,
-        'available_cities': lianjia.available_cities,
-        'available_cities_map': lianjia.available_cities_map,
-    },
-    '58': {
-        'cities': a58.cities,
-        'available_cities': a58.available_cities,
-        'available_cities_map': a58.available_cities_map,
-    },
-}
+SPIDER_SETTINGS = {}
 
 # ES 节点, 可以配置多个节点(集群), 默认为 None, 不会存储到 ES
 ELASTIC_HOSTS = [

@@ -5,6 +5,7 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import hashlib
+import time
 
 import redis
 from scrapy.conf import settings
@@ -16,8 +17,9 @@ from house_renting.exporters import ESItemExporter
 class HouseRentingPipeline(object):
     def process_item(self, item, spider):
         m = hashlib.md5()
-        m.update(item['source_url'].encode('utf-8'))
+        m.update(item.get('store_biz_url', '').encode('utf-8'))
         item['item_id'] = m.hexdigest()
+        item['crawled_at'] = time.strftime('%Y-%m-%d %H:%M', time.localtime())
         return item
 
 
@@ -45,7 +47,7 @@ class DuplicatesPipeline(object):
             return item
 
         if 'item_id' in item:
-            item_id = item['item_id']
+            item_id = item.get('item_id', '')
             existed_id = self.r_client.get(item_id)
             if existed_id is not None:
                 raise DropItem("Duplicate item found: %s" % item)
