@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-BOT_NAME = 'house_renting'
+BOT_NAME = 'yelp_crawler'
 
-COMMANDS_MODULE = 'house_renting.commands'
-SPIDER_MODULES = ['house_renting.spiders']
-NEWSPIDER_MODULE = 'house_renting.spiders'
+COMMANDS_MODULE = 'yelp_crawler.commands'
+SPIDER_MODULES = ['yelp_crawler.spiders']
+NEWSPIDER_MODULE = 'yelp_crawler.spiders'
 
 USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 ' \
              'Safari/605.1.15 '
@@ -73,21 +73,22 @@ SPIDER_MIDDLEWARES = {
 }
 
 DOWNLOADER_MIDDLEWARES = {
-    'house_renting.middlewares.HouseRentingAgentMiddleware': 100,
-    'house_renting.middlewares.HouseRentingProxyMiddleware': 200,
-    'house_renting.middlewares.HouseRentingRetryMiddleware': 300,
+    'yelp_crawler.middlewares.HouseRentingAgentMiddleware': 100,
+    # 'yelp_crawler.middlewares.HouseRentingProxyMiddleware': 200,
+    'yelp_crawler.middlewares.HouseRentingRetryMiddleware': 300,
     'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'scrapy_crawlera.CrawleraMiddleware': 610
 }
 
 ITEM_PIPELINES = {
-    'house_renting.pipelines.HouseRentingPipeline': 100,
-    'house_renting.pipelines.DuplicatesPipeline': 200,
+    'yelp_crawler.pipelines.HouseRentingPipeline': 100,
+    'yelp_crawler.pipelines.DuplicatesPipeline': 200,
     'scrapy.pipelines.images.ImagesPipeline': 300,
-    'house_renting.pipelines.ESPipeline': 400,
+    'yelp_crawler.pipelines.ESPipeline': 400,
 }
 
-IMAGES_STORE = '/house-renting/data/images'
+IMAGES_STORE = '/yelp-crawler/data/images'
 
 MEDIA_ALLOW_REDIRECTS = True
 
@@ -119,3 +120,8 @@ ELASTIC_HOSTS = [
 
 REDIS_HOST = 'redis'  # 默认为 None, 不会去重
 REDIS_PORT = 6379  # 默认 6379
+
+# SCRAPY_CRAWLERA
+CRAWLERA_ENABLED = True
+CRAWLERA_APIKEY = 'ed81328d71f243d6ba3c75e889e967f3'
+CRAWLERA_PRESERVE_DELAY = 0

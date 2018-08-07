@@ -5,13 +5,17 @@ from scrapy.linkextractors import LinkExtractor
 from scrapy.loader import ItemLoader
 from scrapy.spiders import Rule, CrawlSpider
 
-from house_renting.items import YelpItem
+from yelp_crawler.items import YelpItem
 from urllib.parse import unquote
 
 
 class YelpSpider(CrawlSpider):
     name = 'yelp'
-    start_urls = ['https://www.yelp.com/search?find_desc=hair+salons&find_loc=Toronto,+Ontario,+Canada&start=0']
+    # start_urls = ['https://www.yelp.com/search?find_desc=hair+salons&find_loc=Toronto,+Ontario,+Canada&start=0']
+    # start_urls = ['https://www.yelp.com/search?find_desc=salon&find_loc=New+York,+NY&start=0']
+    start_urls = ['https://www.yelp.com/search?find_desc=salon&find_loc=San+Francisco,+CA&start=0']
+    # start_urls = ['https://www.yelp.com/search?find_desc=salon&find_loc=Seattle,+WA&start=0']
+    # start_urls = ['https://www.yelp.com/search?find_desc=Hair+Salons&find_loc=Oregon+City,+OR&start=0']
 
     rules = (
         Rule(LinkExtractor(allow=r'/search?.*$',

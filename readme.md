@@ -1,10 +1,10 @@
 # 租房信息聚合爬虫
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Build Status](https://travis-ci.org/kezhenxu94/house-renting.svg?branch=master)](https://travis-ci.org/kezhenxu94/house-renting)
+[![Build Status](https://travis-ci.org/kezhenxu94/yelp-crawler.svg?branch=master)](https://travis-ci.org/kezhenxu94/yelp-crawler)
 [![Python Version](https://img.shields.io/badge/Python-2.7-green.svg)](https://www.python.org/downloads/release/python-2715/)
 [![Python Version](https://img.shields.io/badge/Python-3.6-green.svg)](https://www.python.org/downloads/release/python-365/)
-[![Gitter](https://img.shields.io/gitter/room/kezhenxu94/house-renting.svg)](https://gitter.im/house-renting/Lobby/)
+[![Gitter](https://img.shields.io/gitter/room/kezhenxu94/yelp-crawler.svg)](https://gitter.im/yelp-crawler/Lobby/)
 
 **租房信息聚合爬虫**是作者在租房过程中, 由于不堪忍受各个租房网站上各种眼花缭乱的信息而开发的一个基于 [Scrapy](https://scrapy.org) 的爬虫, 作者已经使用该爬虫找到合适的住所; 
 
@@ -14,7 +14,7 @@
 
 ## 帮助
 
-详细说明请看本项目的 [Wiki 页面](https://github.com/kezhenxu94/house-renting/wiki);
+详细说明请看本项目的 [Wiki 页面](https://github.com/kezhenxu94/yelp-crawler/wiki);
 
 ## 鼓励
 
@@ -22,4 +22,4 @@
 
 ## 贡献
 
-如果你觉得某个租房网站的内容对你非常有用, 应该被收录在这里, 可以[在这里提 Issue](https://github.com/kezhenxu94/house-renting/issues), 或者你自己实现之后[在这里提 Pull Request](https://github.com/kezhenxu94/house-renting/pulls), 帮助更多人找到合适的住所;
+如果你觉得某个租房网站的内容对你非常有用, 应该被收录在这里, 可以[在这里提 Issue](https://github.com/kezhenxu94/yelp-crawler/issues), 或者你自己实现之后[在这里提 Pull Request](https://github.com/kezhenxu94/yelp-crawler/pulls), 帮助更多人找到合适的住所;

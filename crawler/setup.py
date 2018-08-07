@@ -6,6 +6,6 @@ setup(
     name='project',
     version='1.0',
     packages=find_packages(),
-    entry_points={'scrapy': ['settings = house_renting.settings']},
+    entry_points={'scrapy': ['settings = yelp_crawler.settings']},
     install_requires=['scrapy', 'elasticsearch', 'redis']
 )

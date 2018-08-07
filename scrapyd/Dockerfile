@@ -1,6 +1,4 @@
-FROM python:3
-
-MAINTAINER kezhenxu94 <kezhenxu94@163.com>
+FROM python:3.6
 
 VOLUME /etc/scrapyd/ /var/lib/scrapyd/
 

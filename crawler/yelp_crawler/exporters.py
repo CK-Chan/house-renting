@@ -6,7 +6,7 @@ from scrapy.exporters import BaseItemExporter
 
 
 class ESItemExporter(BaseItemExporter):
-    index = 'yelp_salon_email'
+    index = 'yelp_crawler'
     doc_type = 'Post'
 
     def __init__(self, **kwargs):

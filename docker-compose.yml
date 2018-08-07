@@ -3,7 +3,7 @@ version: '3.1'
 services:
     scrapyd:
         build: ./scrapyd
-        image: house-renting/scrapyd
+        image: yelp-crawler/scrapyd
         container_name: scrapyd
         networks:
             - localhost
@@ -13,30 +13,30 @@ services:
             - redis
             - elastic
         volumes:
-            - ./data:/house-renting/data
+            - ./data:/yelp-crawler/data
         entrypoint: /bin/true
 
     crawler:
         build: ./crawler
-        image: house-renting/crawler
+        image: yelp-crawler/crawler
         container_name: crawler
         networks:
             - localhost
         volumes:
-            - ./data:/house-renting/data
-            - ./data/images:/house-renting/data/images
+            - ./data:/yelp-crawler/data
+            - ./data/images:/yelp-crawler/data/images
         depends_on:
             - redis
             - elastic
         entrypoint: /bin/true
 
     yelp:
-        image: house-renting/crawler
+        image: yelp-crawler/crawler
         container_name: yelp
         networks:
             - localhost
         volumes:
-            - ./data/images:/house-renting/data/images
+            - ./data/images:/yelp-crawler/data/images
         depends_on:
             - crawler
         entrypoint: scrapy crawl yelp

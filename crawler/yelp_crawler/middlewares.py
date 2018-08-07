@@ -10,7 +10,7 @@ from redis import Redis
 from scrapy.conf import settings
 from scrapy.downloadermiddlewares.retry import RetryMiddleware
 
-from house_renting import proxies
+from yelp_crawler import proxies
 
 
 class HouseRentingAgentMiddleware(object):
@@ -23,6 +23,8 @@ class HouseRentingAgentMiddleware(object):
 
     def process_request(self, request, spider):
         request.headers.setdefault('User-Agent', random.choice(self.user_agents))
+        print('====================== request.headers ======================')
+        print(request.headers)
 
 
 class HouseRentingRetryMiddleware(RetryMiddleware):
